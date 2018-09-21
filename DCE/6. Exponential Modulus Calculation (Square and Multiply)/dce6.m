@@ -1,7 +1,9 @@
 a=input('Enter a: ');
 x=input('Enter x: ');
 n=input('Enter n: ');
+
 x_bin=de2bi(x);
+
 y=1;
 for i =1:length(x_bin)
     if x_bin(i)==1
