@@ -29,6 +29,8 @@ def recognize_speech_from_mic(recognizer, microphone):
         recognizer.adjust_for_ambient_noise(source)
         audio = recognizer.listen(source)
 
+    print('Audio Recorded')
+
     # set up the response object
     response = {
         "success": True,
@@ -53,26 +55,30 @@ def recognize_speech_from_mic(recognizer, microphone):
     return response
 
 def start_recording(recognizer,microphone):
-    print('Please speak now ... \n')
-    for i in range(1):
-        text = recognize_speech_from_mic(recognizer, microphone)
-        
-        if text["transcription"]:
-            break
-        if not text["success"]:
-            print("I didn't catch that. What did you say?\n")
-            break
+    try:
+        print('Please speak now ... \n')
+        for i in range(1):
+            text = recognize_speech_from_mic(recognizer, microphone)
+            
+            if text["transcription"]:
+                # show the user the transcription
+                print("You said: {}".format(text["transcription"]))
+                break
+            
+            if not text["success"]:
+                print("I didn't catch that. What did you say?\n")
+                break
 
-        # if there was an error
-        if text["error"]:
-            print("ERROR: {}".format(text["error"]))
-            break
+            # if there was an error
+            if text["error"]:
+                print("ERROR: {}".format(text["error"]))
+                break
 
-    # show the user the transcription
-    print("You said: {}".format(text["transcription"]))
 
-    string=text["transcription"]
-    keywords=string.split()
-    return keywords
+        string=text["transcription"]
+        keywords=string.split()
+        return keywords
+    except AttributeError:
+        print('\n ')
         
         

@@ -6,5 +6,7 @@ if __name__ == "__main__":
     recognizer = sr.Recognizer()
     microphone = sr.Microphone()
 
-    keywords=start_recording(recognizer,microphone)
-    print(keywords)
+    keywords=None
+    
+    while keywords is None:
+        keywords=start_recording(recognizer,microphone)
