@@ -56,7 +56,7 @@ def recognize_speech_from_mic(recognizer, microphone):
 
 def start_recording(recognizer,microphone):
     try:
-        print('Please speak now ... \n')
+        print('\nPlease speak now ...')
         for i in range(1):
             text = recognize_speech_from_mic(recognizer, microphone)
             
@@ -79,6 +79,6 @@ def start_recording(recognizer,microphone):
         keywords=string.split()
         return keywords
     except AttributeError:
-        print('\n ')
+        pass
         
         
