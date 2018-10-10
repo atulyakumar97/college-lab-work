@@ -1,8 +1,6 @@
 import random
 import time
 import speech_recognition as sr
-from rake_nltk import Rake
-
 
 def recognize_speech_from_mic(recognizer, microphone):
     """Transcribe speech from recorded from `microphone`.
