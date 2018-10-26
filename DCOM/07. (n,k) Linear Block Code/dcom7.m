@@ -27,23 +27,23 @@ Ht=H'
 S=mod(r*Ht,2)
 [l,k]=size(S);
  
-
-for i=1:m
+errorbit=0;
+for i=1:n
     count=0;
     for j=1:k
         if S(j)==Ht(i,j)
+            
             count=count+1;
-            if count==k
-                break 
-            end
-            break
-        end
+        end   
+    end
+    if count==k
+            errorbit=i;
     end
 end
  
 disp('Error in bit ')
- disp(i);
-  r(i)=mod(r(i)+1,2);
+ disp(errorbit);
+  r(errorbit)=mod((r(errorbit)+1),2);
 
 disp('Corrected Codeword :')
 disp(r)
