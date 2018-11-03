@@ -1,7 +1,7 @@
 Z=wavread('S1.wav');
 sound(Z)
 
-[y,fs]=wavread('C:\Users\djsce.student\Desktop\S1.wav');
+[y,fs]=wavread('S1.wav');
 n=length(y)
 t=1:1:n;
 figure
@@ -9,7 +9,7 @@ plot(t,y)
 xlabel('Time')
 ylabel('Amplitude')
 
-[y,fs]=wavread('C:\Users\djsce.student\Desktop\S1.wav',[6000,8000]);
+[y,fs]=wavread('S1.wav',[6000,8000]);
 n=length(y)
 t=1:1:n;
 figure

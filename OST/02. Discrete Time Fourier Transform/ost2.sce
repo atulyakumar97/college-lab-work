@@ -7,11 +7,10 @@ for k=1:N
 for n=1:N
 y(k)=y(k)+x(n)*round(exp(-(i*2*pi*(k-1)*(n-1))/N))
 end
-end
-disp(y)
-for k=1:N
 plot2d3(k,abs(y(k)))
 end
+disp(y)
+
 a = gca();//get the current axes
 a.data_bounds=[0,0;4,10];//[xmin,ymin,xmax,ymax]
 title('Discrete Fourier Transform');
