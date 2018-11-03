@@ -1,0 +1,12 @@
+ 	MOV AX, [200]		lower 16 bit  	 	
+ 	MOV BX, [204] 	 	 	 
+ 	ADD AX, BX 			
+ 	MOV [208], AX 			
+ 	MOV AX, [202]  	 	upper 16 bit 	 
+ 	MOV BX, [206] 	 	 	 
+ 	ADC AX, BX 	
+ 	MOV [20A], AX 	
+ 	MOV CL, 00 	
+ 	ADC CL, 00 	
+ 	MOV [20C], CL 	
+ 	HLT 	

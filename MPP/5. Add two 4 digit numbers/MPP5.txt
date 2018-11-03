@@ -1,0 +1,13 @@
+	MOV AL, [200]  	 	 	 	 	 	MOV BL, [202] 	 	 	
+ 	ADD AL, BL 			
+ 	DAA
+	MOV [204],AL
+	MOV AL, [201]
+ 	MOV BL, [203] 	 	 	   						
+ 	ADC AL, BL 			
+ 	DAA 
+	MOV [205],AL
+	MOV CL,00
+	ADC CL,00
+	MOV [206],CL
+	HLT		

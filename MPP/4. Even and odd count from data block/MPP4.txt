@@ -1,0 +1,18 @@
+	    MOV BX, 200
+            MOV CL, 05
+	    MOV DL, 00  ODD COUNT
+	    MOV DH, 00  EVEN COUNT
+up:         MOV AL, [BX] 
+            ROR AL,1 
+            JNC even
+	    JC odd
+even:	    INC BX
+	    INC DH
+            JMP down
+odd:	    INC BX
+	    INC DL 
+down: 	    DEC CL 
+            JNZ up 
+	    MOV [300],DL
+	    MOV [301],DH	
+            HLT 

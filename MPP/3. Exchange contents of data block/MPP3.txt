@@ -1,0 +1,12 @@
+            MOV SI, 200 
+            MOV DI, 300 
+            MOV CL, 05  
+     up     MOV AL, [SI] 
+            MOV BL, [DI] 
+            MOV [DI], AL
+	    MOV [SI], BL
+            INC SI 
+            INC DI 
+            DEC CL 
+            JNZ up 
+            HLT  
