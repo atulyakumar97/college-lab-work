@@ -1,0 +1,417 @@
+﻿MPP PRACS QUESTION BANK
+
+Q1. No of 1s in given byte which is stored in a memory location 
+
+ 	MOV AL, [200]  	 	 	address of data 
+ 	MOV BL, 08 			
+ 	MOV CL, 00 			
+up: 	RCR AL, 1 			
+ 	JNC down  			
+ 	INC CL 			
+down 	DEC BL 			
+ 	JNZ up 			
+ 	MOV [201], CL 	 	move count to next address 
+ 	HLT 		
+
+Q2. No of 0s in given byte which is stored in a memory location 
+
+ 	MOV AL, [200]  	 	 	address of data 
+ 	MOV BL, 08 			
+ 	MOV CL, 00 			
+up: 	RCR AL, 1 			
+ 	JC down 			
+ 	INC CL 			
+down 	DEC BL 			
+ 	JNZ up 			
+ 	MOV [201], CL 	 	move count to next address 
+ 	HLT 		
+
+Q3. Find the even number from the given series of 8 bit numbers 
+
+            MOV BX, 200 
+            MOV CL, 05
+            MOV SI, 300
+up:         MOV AL, [BX] 
+            ROR AL, 1 
+            JC down 
+            MOV AH, [BX] 
+            MOV [SI], AH 
+            INC SI 
+down   	    INC BX 
+            DEC CL 
+            JNZ up 
+            HLT 
+
+Q4. Find the odd number from the given series of 8 bit numbers 
+
+            MOV BX, 200
+            MOV CL, 05
+            MOV SI, 300 
+up:       MOV AL, [BX] 
+            ROR AL,1 
+            JNC down 
+            MOV AH, [BX] 
+            MOV [SI], AH 
+            INC SI 
+down 	    INC BX 
+            DEC CL 
+            JNZ up 
+            HLT 
+ 
+Q5. Write a program to add to 4 digit BCD numbers using DAA 
+
+ 	MOV AL, [200]  	 	 	 	 	 	
+ 	MOV BL, [202] 	 	 	
+ 	ADD AL, BL 			
+ 	DAA
+	MOV [204],AL
+	MOV AL, [201]
+ 	MOV BL, [203] 	 	 	   						
+ 	ADC AL, BL 			
+ 	DAA 
+	MOV [205],AL
+	MOV CL,00
+	ADC CL,00
+	MOV [206],CL
+	HLT						
+
+Q6. Packed BCD to unpacked BCD 
+ 	eg: 53 -> 05 03 	
+
+ 	
+MOV AL, [200]  	
+ 	
+ 	
+53 	
+ 	AND AL, F0      	 	 	50 	
+ 	ROR AL, 4        	 	 	05 	
+ 	MOV [201], AL  	 	 	 	 
+ 	MOV AL, [200] 				
+ 	AND AL, 0F      	 	 	03 	
+ 	MOV [202], AL 				
+ 	HLT 				
+
+Q7. Unpacked BCD to packed BCD 
+ 	eg: 03 05 -> 35 			
+
+ 	
+	MOV AL, [200]			03 
+ 	MOV BL, [201] 	 	 	05 
+ 	ROL AL, 4        	 	30 
+ 	ADD AL, BL     	 	 	35 
+ 	MOV [202], AL 			
+ 	HLT 			
+
+Q8. Add a series of ten 8-bit numbers (Sum=16-bit) 
+
+ 	MOV CL, 09 
+ 	MOV SI, 501 
+ 	MOV AL, [500] 
+up 	ADD AL, [SI] 
+ 	INC SI 
+ 	DEC CL 
+ 	JNZ up 
+	MOV [50A], AL 
+ 	MOV CL, 00 
+ 	ADC CL, 00 
+ 	MOV [50C], CL 
+ 	HLT 
+
+Q9. Multiply 2 unpack BCD numbers using AAM 
+
+ 	MOV AL, [200] 
+ 	MOV BL, [201] 
+ 	MUL BL 
+ 	AAM 
+ 	ROL AH,4 			packing
+	ADD AL,AH
+	MOV [202],AL
+ 	HLT 
+ 
+Q10. Mask LSB of given 8 bit no and MSB of given no 
+
+ 	MOV AL, [300]  	 	 	 	
+ 	AND AL, 7E 				
+ 	MOV [301], AL  	 	 	 	 	 	 	 
+ 	HLT 							
+
+Q11. 2’s Complement of 32 bit number 
+
+ 	MOV AX, [300] 	 	 	lower word 
+ 	MOV BX, [302] 	 	 	upper word 
+ 	NOT AX 	
+ 	NOT BX 	
+ 	ADD AX, 0001 	
+ 	ADD BX, 0000 	
+ 	MOV [500], AX 	
+ 	MOV [502], BX 	
+ 	HLT 	
+
+Q12. Implement Y=AB+CD  
+
+ 	MOV AL, [200]  	 	 	A 	
+ 	MOV BL, [201] 	 	 	B 	
+ 	MUL BL 	
+	MOV CX,AX			AB  	 	 	 	
+ 	MOV AL, [202]  	 	 	C 	 
+ 	MOV BL, [203] 	 	 	D 	
+ 	MUL BL 				product CD stored in AX --> 8*8 bit no can give 16 bit
+ 	ADD AX,CX 			AB+CD 	 	 	
+ 	MOV [204],AX			
+	MOV CL,00		
+	ADC CL,00			getting carry
+	MOV [206],CL
+ 	HLT 				
+
+Q13. Implement Y=(A+B).(C+D) 
+
+            MOV AL, [200]                                    A 
+            MOV BL, [201]                                    B 
+            ADD AL, BL                                       A+B 
+            MOV CL,AL					     Storing A+B in temp 
+	    MOV AL,[202]				     C
+	    MOV BL,[203]				     D
+	    ADD AL,BL
+	    MUL CL						Result in AX --> 8*8 bit no can give 16 bit
+	    MOV [204],AX
+	    HLT 	 				 	 
+ 
+Q14. Multiply two 8 bit numbers using successive addition 
+
+ 	MOV BL, [500] 
+ 	MOV DL, [501] 
+ 	MOV BH, 00 
+ 	MOV CL, DL 
+ 	MOV AX, 0000 
+up  	ADC AX, BX 
+ 	DEC CL 
+ 	JNZ up 
+ 	MOV [502], AX 
+ 	HLT 
+
+Q15. Subtract two 24 bit numbers
+
+ 	MOV AX, [300] 	 	 	LSB1 
+ 	MOV BL, [302] 	 	 	MSB1 
+ 	MOV DX, [303] 	 	 	LSB2 
+ 	MOV BH, [305] 	 	 	MSB2 
+ 	SUB AX, DX 	
+ 	MOV [500], AX 	
+ 	SBB BL,BH 	
+ 	MOV [501], BL 	
+ 	HLT 	
+
+Q16. Add two 32 bit numbers 
+ 	 	
+ 	MOV AX, [200]		lower 16 bit  	 	 	 
+ 	MOV BX, [204] 	 	 	 
+ 	ADD AX, BX 			
+ 	MOV [208], AX 			
+ 	MOV AX, [202]  	 	upper 16 bit 	 
+ 	MOV BX, [206] 	 	 	 
+ 	ADC AX, BX 	
+ 	MOV [20A], AX 	
+ 	MOV CL, 00 	
+ 	ADC CL, 00 	
+ 	MOV [20C], CL 	
+ 	HLT 	
+
+
+Q17. Exchange data blocks 
+
+            MOV SI, 200 
+            MOV DI, 300 
+            MOV CL, 05  
+     up     MOV AL, [SI] 
+            MOV BL, [DI] 
+            MOV [DI], AL
+	    MOV [SI], BL
+            INC SI 
+            INC DI 
+            DEC CL 
+            JNZ up 
+            HLT  
+
+Q18. Multiply 32 bit number by 16 bit number 
+
+          ABCD x EF
+	  200 - D
+	  201 - C
+	  202 - B
+	  203 - A
+	  204 - F
+	  205 - E
+	  
+	  MOV AX,[200]
+	  MOV BX,[204]
+	  MUL BX
+	  MOV [206],AX
+	  MOV CX,DX
+	  MOV AX,[202]
+	  MUL BX
+	  ADD CX,AX
+	  MOV [208],CX
+	  ADC DX,0
+	  MOV [20A],DX
+	  HLT
+ 
+Q19. To find largest signed no from a data block 
+
+ 	MOV CL, 0A 
+ 	MOV BX, 200
+ 	MOV AH, 80 
+up  	MOV AL, [BX] 
+ 	CMP AH, AL 
+ 	JGE down 
+ 	MOV AH, AL 
+down	INC BX 
+ 	DEC CL 
+ 	JNZ up 
+ 	MOV [20A] ,AH 
+ 	HLT 
+
+Q20. To find largest un-signed no from a data block 
+ 	 
+ 	MOV AH, 00 
+ 	MOV CL, 0A 
+ 	MOV BX, 200 
+up  	MOV AL, [BX] 
+ 	CMP AL, AH 
+ 	JBE down 
+ 	MOV AH, AL 
+down   INC BX 
+ 	DEC CL 
+ 	JNZ UP 
+ 	MOV [20A], AH 
+ 	HLT 
+
+
+Q21. To find smallest signed no from a data block
+	MOV CL, 0A
+	MOV BX, 200
+	MOV AH, 7F
+up      MOV AL, [BX]
+	CMP AH, AL
+	JLE down
+	MOV AH, AL
+down 	INC BX
+	DEC CL
+	JNZ up
+	MOV [20A] ,AH
+	HLT
+
+
+Q22. To find smallest un-signed no from a data block
+	MOV AH, FF
+	MOV CL, 0A
+	MOV BX, 200
+up 	MOV AL, [BX]
+	CMP AL, AH
+	JAE down
+	MOV AH, AL
+down 	INC BX
+	DEC CL
+	JNZ UP
+	MOV [20A], AH
+	HLT
+
+
+Q23. To find Z  = X n where X and n are 8 bit numbers 
+
+ 	MOV BH, [300] 	 	 	X 
+ 	MOV BL, [301] 	 	 	n 
+ 	MOV AL, 01 	
+ 	MOV CL, BL 	
+up  	MUL BH 	
+ 	DEC CL 	
+ 	JNZ up 	
+ 	MOV [500], AX 	
+ 	HLT 	
+
+Q24. Reverse string using string instruction  
+
+             
+            Data SEGMENT 
+            ORG 200H 
+            String1 DB 10H,20H,30H,40H,50H,60H,70H,80H 
+            Data ENDs 
+            Extra SEGMENT 
+            ORG 300H 
+            String2 DB 08 DUP(00) 
+            Extra ENDs 
+            Code SEGMENT 
+            ORG 100H 
+            ASSUME CS: Code, DS: Data, ES: Extra 
+            Start: MOV AX, Data 
+                      MOV DS, AX 
+                      MOV AX, Extra 
+                      MOV ES, AX 
+                      LEA SI, String1 
+ 
+
+ 		LEA DI, String2+7 
+ 	UP:	CLD 
+ 		LODSB
+ 		STD 
+ 		STOSB 
+ 		DEC CL 
+ 		JNZ UP 
+ 		INT 3 
+ 		Code ENDs 
+ 		END Start 
+		
+		
+save file.asm after edit
+TASM file.asm (remember no debug)
+TLINK/L file.obj 
+TD file.exe
+ Press F9
+then in lower window right click 
+go to 
+type DS:MEM location or ES:MEM loc to view your input and output
+
+
+Q25. Search the character from the given string 
+
+             
+            Extra SEGMENT 
+            ORG 300H 
+            String DB “ABCAADE" 
+            Extra ENDs 
+            Data SEGMENT 
+            ORG 200H 
+            Char_flag DB 00H 
+            Char_count DB 00H 
+            Data ENDs 
+            Code SEGMENT 
+            ORG 100H 
+            ASSUME CS: Code, DS: Data, ES: Extra 
+            Start: MOV AX, Data 
+                      MOV DS, AX 
+                      MOV AX, Extra 
+                      MOV ES, AX 
+                      MOV CL,07 
+                      LEA DI, String 
+                      MOV AL, ‘A’ 
+UP:                SCASB 
+                      JNZ DOWN
+                      MOV Char_flag,01 
+                      INC Char_count 
+DOWN:          DEC CL 
+                      JNZ UP 
+                      INT 3 
+                      Code ENDs 
+                      END Start 
+
+Q26. Transfer data block using string instruction 
+
+            MOV SI, 200
+            MOV DI, 300 
+            MOV CL, 05 
+            CLD 
+up        MOVSB 
+            DEC CL 
+            JNZ up 
+            HLT 
+
+Check Output at D ES:300 305 instead of D DS

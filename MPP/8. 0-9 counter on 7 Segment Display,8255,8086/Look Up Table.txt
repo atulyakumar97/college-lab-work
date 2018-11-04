@@ -1,0 +1,12 @@
+For Common Cathode 7 segment display
+
+1 - 06
+2 - 5B
+3 - 4F
+4 - 66
+5 - 6D
+6 - 7D 
+7 - 07
+8 - 7F
+9 - 6F
+0 - 3F
