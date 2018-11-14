@@ -1,0 +1,8 @@
+* source CLASSB
+Q_Q1         N00481 N00358 N00436 Q2N3716
+Q_Q2         N00493 N00358 N00436 Q2N4918
+R_R1         N00436 0  1k TC=0,0 
+V_V1         N00358 0  
++SIN 0 5V 1k 0 0 0
+V_V2         N00481 0 8Vdc
+V_V3         0 N00493 8Vdc
