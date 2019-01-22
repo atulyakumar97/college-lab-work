@@ -1,6 +1,6 @@
 Practical Subjects:
 
-PCOM - Principles of Communication - Matlab and Simulink
+PCOM - Principles of Communication - Matlab & Simulink
 
 SS - Signal and Systems - Matlab
 
