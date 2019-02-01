@@ -1,0 +1,85 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/01/2019  11:28:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE large.obj, small.obj TO mca2
+
+
+INPUT MODULES INCLUDED:
+  large.obj (LARGE)
+  small.obj (SMALL)
+
+
+LINK MAP OF MODULE:  mca2 (LARGE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0018H     ABSOLUTE     
+* OVERLAP * CODE    0000H     0018H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  mca2 (LARGE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LARGE
+  C:000EH         SYMBOL        DOWN
+  C:0016H         SYMBOL        HERE
+  C:000BH         SYMBOL        NEXT
+  C:0007H         SYMBOL        UP
+  C:0000H         LINE#         2
+  C:0003H         LINE#         3
+  C:0005H         LINE#         4
+  C:0007H         LINE#         5
+  C:0008H         LINE#         6
+  C:000BH         LINE#         7
+  C:000DH         LINE#         8
+  C:000EH         LINE#         9
+  C:000FH         LINE#         10
+  C:0011H         LINE#         11
+  C:0014H         LINE#         12
+  C:0015H         LINE#         13
+  C:0016H         LINE#         14
+  -------         ENDMOD        LARGE
+
+  -------         MODULE        SMALL
+  C:000EH         SYMBOL        DOWN
+  C:0016H         SYMBOL        HERE
+  C:000BH         SYMBOL        NEXT
+  C:0007H         SYMBOL        UP
+  C:0000H         LINE#         2
+  C:0003H         LINE#         3
+  C:0005H         LINE#         4
+  C:0007H         LINE#         5
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2019  11:28:38  PAGE 2
+
+
+  C:0008H         LINE#         6
+  C:000BH         LINE#         7
+  C:000DH         LINE#         8
+  C:000EH         LINE#         9
+  C:000FH         LINE#         10
+  C:0011H         LINE#         11
+  C:0014H         LINE#         12
+  C:0015H         LINE#         13
+  C:0016H         LINE#         14
+  -------         ENDMOD        SMALL
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      0017H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0030H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=48
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
