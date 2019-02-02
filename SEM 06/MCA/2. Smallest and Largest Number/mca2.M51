@@ -1,16 +1,15 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        02/01/2019  11:28:38  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/02/2019  19:28:48  PAGE 1
 
 
-BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE large.obj, small.obj TO mca2
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE small.obj TO mca2
 
 
 INPUT MODULES INCLUDED:
-  large.obj (LARGE)
   small.obj (SMALL)
 
 
-LINK MAP OF MODULE:  mca2 (LARGE)
+LINK MAP OF MODULE:  mca2 (SMALL)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -21,34 +20,13 @@ LINK MAP OF MODULE:  mca2 (LARGE)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0018H     ABSOLUTE     
-* OVERLAP * CODE    0000H     0018H     ABSOLUTE     
 
 
 
-SYMBOL TABLE OF MODULE:  mca2 (LARGE)
+SYMBOL TABLE OF MODULE:  mca2 (SMALL)
 
   VALUE           TYPE          NAME
   ----------------------------------
-
-  -------         MODULE        LARGE
-  C:000EH         SYMBOL        DOWN
-  C:0016H         SYMBOL        HERE
-  C:000BH         SYMBOL        NEXT
-  C:0007H         SYMBOL        UP
-  C:0000H         LINE#         2
-  C:0003H         LINE#         3
-  C:0005H         LINE#         4
-  C:0007H         LINE#         5
-  C:0008H         LINE#         6
-  C:000BH         LINE#         7
-  C:000DH         LINE#         8
-  C:000EH         LINE#         9
-  C:000FH         LINE#         10
-  C:0011H         LINE#         11
-  C:0014H         LINE#         12
-  C:0015H         LINE#         13
-  C:0016H         LINE#         14
-  -------         ENDMOD        LARGE
 
   -------         MODULE        SMALL
   C:000EH         SYMBOL        DOWN
@@ -59,9 +37,6 @@ SYMBOL TABLE OF MODULE:  mca2 (LARGE)
   C:0003H         LINE#         3
   C:0005H         LINE#         4
   C:0007H         LINE#         5
-BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2019  11:28:38  PAGE 2
-
-
   C:0008H         LINE#         6
   C:000BH         LINE#         7
   C:000DH         LINE#         8
@@ -73,13 +48,9 @@ SYMBOL TABLE OF MODULE:  mca2 (LARGE)
   C:0016H         LINE#         14
   -------         ENDMOD        SMALL
 
-*** WARNING L5: CODE SPACE MEMORY OVERLAP
-    FROM:    0000H
-    TO:      0017H
-
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0030H BYTE ( 2%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0018H BYTE ( 1%) *
 ******************************************************************************
 
-Program Size: data=8.0 xdata=0 code=48
-LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
+Program Size: data=8.0 xdata=0 code=24
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

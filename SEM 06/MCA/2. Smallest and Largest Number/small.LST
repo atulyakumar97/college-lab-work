@@ -1,7 +1,7 @@
-A51 MACRO ASSEMBLER  SMALL                                                                02/01/2019 11:28:38 PAGE     1
+A51 MACRO ASSEMBLER  SMALL                                                                02/02/2019 19:28:46 PAGE     1
 
 
-MACRO ASSEMBLER A51 V8.02b
+MACRO ASSEMBLER A51 V8.2.7.0
 OBJECT MODULE PLACED IN small.OBJ
 ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE small.asm SET(SMALL) DEBUG EP
 
@@ -22,7 +22,7 @@ LOC  OBJ            LINE     SOURCE
 0015 F0               13     MOVX @DPTR,A
 0016 80FE             14     HERE: SJMP HERE
                       15     end
-A51 MACRO ASSEMBLER  SMALL                                                                02/01/2019 11:28:38 PAGE     2
+A51 MACRO ASSEMBLER  SMALL                                                                02/02/2019 19:28:46 PAGE     2
 
 SYMBOL TABLE LISTING
 ------ ----- -------
