@@ -107,7 +107,7 @@ D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area<br>
 N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2<br>
 E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP<br>
 i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area<br>
-* - candidate default, U - per-user static route, o - ODR<br>
+\* - candidate default, U - per-user static route, o - ODR<br>
 P - periodic downloaded static route<br>
 <br>
 Gateway of last resort is not set<br>
