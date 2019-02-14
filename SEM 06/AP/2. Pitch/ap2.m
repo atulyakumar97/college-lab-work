@@ -1,7 +1,7 @@
 clear all
 close all 
 clc
-[y,fs]=wavread('s1.wav');
+[y,fs]=audioread('s1.wav');
 
 n=length(y);
 t=(1:1:n)/fs;
@@ -25,5 +25,4 @@ stem(r)
 [rmax,tx]=max(r(ms2:ms20))
 
 fprintf('rmax=%g Fx=%gHz for first peak\n',rmax,fs/(ms2+tx-1));
-fprintf('Fx=%gHz for second peak\n',fs/(ms2+tx));
 
