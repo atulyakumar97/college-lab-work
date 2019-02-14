@@ -2,7 +2,7 @@ close all
 clear all
 clc
 
-img=imread('girlface.png');
+img=imread('cameraman.tif');
 figure(1)
 subplot(3,3,1)
 imshow(img);
@@ -11,8 +11,8 @@ title('Original image');
 %Low Pass Filter
 lp_mask=[1 1 1; 1 1 1; 1 1 1]./9;
 img=double(img);
-for i=2:511
-    for j=2:511
+for i=2:255
+    for j=2:255
     lp_image(i,j)=sum(sum(lp_mask.*img(i-1:i+1, j-1:j+1)));
     end
 end
@@ -23,8 +23,8 @@ title('Low pass filter image');
     
 %High Pass Filter
 hp_mask=[-1 -1 -1; -1 8 -1; -1 -1 -1];
-for i=2:511
-    for j=2:511
+for i=2:255
+    for j=2:255
     hp_image(i,j)=sum(sum(hp_mask.*img(i-1:i+1, j-1:j+1)));
     end
 end
@@ -35,8 +35,8 @@ title('High pass filter image');
 
 %High Boost
 hb_mask=[-1 -1 -1; -1 8.9 -1; -1 -1 -1];
-for i=2:511
-    for j=2:511
+for i=2:255
+    for j=2:255
     hb_image(i,j)=sum(sum(hb_mask.*img(i-1:i+1, j-1:j+1)));
     end
 end
@@ -59,8 +59,8 @@ title('Median filter image');
 
 %Weighted Average
 wa_mask=[1 2 1; 2 4 2; 1 2 1]./16;
-for i=2:511
-    for j=2:511
+for i=2:255
+    for j=2:255
     wa_image(i,j)=sum(sum(wa_mask.*img(i-1:i+1, j-1:j+1)));
     end
 end
@@ -72,8 +72,8 @@ title('Weighted Average image');
 %Low Pass Filter 5x5
 lp_mask5=ones(5,5)./25;
 
-for i=3:510
-    for j=3:510
+for i=3:254
+    for j=3:254
     lp_image5(i,j)=sum(sum(lp_mask5.*img(i-2:i+2, j-2:j+2)));
     end
 end
@@ -84,8 +84,8 @@ title('Low pass filter image for 5x5 mask');
     
 %High Pass Filter 5x5
 hp_mask5=[-1 -1 -1 -1 -1; -1 -1 -1 -1 -1; -1 -1 24 -1 -1; -1 -1 -1 -1 -1;-1 -1 -1 -1 -1];
-for i=3:510
-    for j=3:510
+for i=3:254
+    for j=3:254
     hp_image5(i,j)=sum(sum(hp_mask5.*img(i-2:i+2, j-2:j+2)));
     end
 end
