@@ -1,7 +1,7 @@
-A51 MACRO ASSEMBLER  MCA3                                                                 02/15/2019 10:33:08 PAGE     1
+A51 MACRO ASSEMBLER  MCA3                                                                 02/16/2019 09:58:46 PAGE     1
 
 
-MACRO ASSEMBLER A51 V8.02b
+MACRO ASSEMBLER A51 V8.2.7.0
 OBJECT MODULE PLACED IN mca3.OBJ
 ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE mca3.asm SET(SMALL) DEBUG EP
 
@@ -31,7 +31,7 @@ LOC  OBJ            LINE     SOURCE
                                                      
                              
                                      
-A51 MACRO ASSEMBLER  MCA3                                                                 02/15/2019 10:33:08 PAGE     2
+A51 MACRO ASSEMBLER  MCA3                                                                 02/16/2019 09:58:46 PAGE     2
 
 SYMBOL TABLE LISTING
 ------ ----- -------
