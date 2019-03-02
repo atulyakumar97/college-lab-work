@@ -1,0 +1,2 @@
+Dependencies for Project 'mca_5_p1', Target 'Target 1': (DO NOT MODIFY !)
+F (.\mca_5_p1.asm)(0x5C78CAF1)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--list .\mca_5_p1.lst --xref -o .\mca_5_p1.o --depend .\mca_5_p1.d)

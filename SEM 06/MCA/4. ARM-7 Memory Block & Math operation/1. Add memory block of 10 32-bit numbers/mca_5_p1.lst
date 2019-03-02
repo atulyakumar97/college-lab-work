@@ -1,0 +1,84 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             add, code, readonly
+    2 00000000         entry
+    3 00000000 E3A00000        mov              r0, #0
+    4 00000004 E3A0100A        mov              r1, #0x0A
+    5 00000008 E3A04000        mov              r4, #0
+    6 0000000C E28F2014        adr              r2,data
+    7 00000010 E7923004 
+                       loop    ldr              r3, [r2,r4]
+    8 00000014 E0830000        add              r0, r3, r0
+    9 00000018 E2844004        add              r4, r4, #4
+   10 0000001C E2511001        subs             r1, r1, #1
+   11 00000020 1AFFFFFA        bne              loop
+   12 00000024 EAFFFFFE 
+                       stop    b                stop
+   13 00000028         
+   14 00000028                 align
+   15 00000028 00000001 
+              00000001 
+              00000001 
+              00000001 
+              00000001 
+              00000001 
+              00000001 
+              00000001 
+              00000001 
+              00000001 data    dcd              1,1,1,1,1,1,1,1,1,1
+   16 00000050                 end
+Command Line: --debug --xref --apcs=interwork --depend=.\mca_5_p1.d -o.\mca_5_p
+1.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\I
+nc\Philips --predefine="__EVAL SETA 1" --list=.\mca_5_p1.lst mca_5_p1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+add 00000000
+
+Symbol: add
+   Definitions
+      At line 1 in file mca_5_p1.asm
+   Uses
+      None
+Comment: add unused
+data 00000028
+
+Symbol: data
+   Definitions
+      At line 15 in file mca_5_p1.asm
+   Uses
+      At line 6 in file mca_5_p1.asm
+Comment: data used once
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file mca_5_p1.asm
+   Uses
+      None
+Comment: entry unused
+loop 00000010
+
+Symbol: loop
+   Definitions
+      At line 7 in file mca_5_p1.asm
+   Uses
+      At line 11 in file mca_5_p1.asm
+Comment: loop used once
+stop 00000024
+
+Symbol: stop
+   Definitions
+      At line 12 in file mca_5_p1.asm
+   Uses
+      At line 12 in file mca_5_p1.asm
+Comment: stop used once
+5 symbols
+336 symbols in table

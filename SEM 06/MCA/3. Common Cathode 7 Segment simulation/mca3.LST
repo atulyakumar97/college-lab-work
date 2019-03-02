@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  MCA3                                                                 02/16/2019 09:58:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN mca3.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE mca3.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 900100            2     START: MOV DPTR,#100H
+0003 7A0A              3     MOV R2,#0AH
+0005 7B00              4     MOV R3,#00H
+0007 EB                5     UP1: MOV A,R3
+0008 93                6     MOVC A, @A+DPTR
+0009 F590              7     MOV P1,A
+000B 7DFF              8     MOV R5,#0FFH
+000D 00                9     UP: NOP
+000E 00               10     NOP
+000F 00               11     NOP
+0010 00               12     NOP
+0011 DDFA             13     DJNZ R5,UP
+0013 0B               14     INC R3
+0014 DAF1             15     DJNZ R2,UP1
+0016 020000           16     LJMP START
+0100                  17     ORG 100H
+0100 3F065B4F         18             DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH
+0104 666D7D07                
+0108 7F6F                    
+                      19                     END
+                                                     
+                             
+                                     
+A51 MACRO ASSEMBLER  MCA3                                                                 02/16/2019 09:58:46 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+P1 . . . . . . . .  D ADDR   0090H   A   
+START. . . . . . .  C ADDR   0000H   A   
+UP . . . . . . . .  C ADDR   000DH   A   
+UP1. . . . . . . .  C ADDR   0007H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

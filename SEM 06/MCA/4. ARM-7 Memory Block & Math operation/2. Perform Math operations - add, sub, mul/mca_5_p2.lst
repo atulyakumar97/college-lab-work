@@ -1,0 +1,60 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             maths, code, readonly
+    2 00000000         entry
+    3 00000000 E3A07101        mov              r7,#0x40000000
+    4 00000004 E3A08111        mov              r8,#0x40000004
+    5 00000008         
+    6 00000008 E5970000        ldr              r0,[r7]
+    7 0000000C E5981000        ldr              r1,[r8]
+    8 00000010 E0802001        add              r2,r0,r1
+    9 00000014 E5872008        str              r2,[r7,#8]
+   10 00000018         
+   11 00000018 E0422000        sub              r2,r2,r0
+   12 0000001C E587200C        str              r2,[r7,#12]
+   13 00000020         
+   14 00000020 E0823091        umull            r3,r2,r1,r0
+   15 00000024 E5873010        str              r3,[r7,#16]
+   16 00000028 E5872014        str              r2,[r7,#20]
+   17 0000002C EAFFFFFE 
+                       exit    b                exit
+   18 00000030                 end
+Command Line: --debug --xref --apcs=interwork --depend=.\mca_5_p2.d -o.\mca_5_p
+2.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\I
+nc\Philips --predefine="__EVAL SETA 1" --list=.\mca_5_p2.lst mca_5_p2.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file mca_5_p2.asm
+   Uses
+      None
+Comment: entry unused
+exit 0000002C
+
+Symbol: exit
+   Definitions
+      At line 17 in file mca_5_p2.asm
+   Uses
+      At line 17 in file mca_5_p2.asm
+Comment: exit used once
+maths 00000000
+
+Symbol: maths
+   Definitions
+      At line 1 in file mca_5_p2.asm
+   Uses
+      None
+Comment: maths unused
+3 symbols
+334 symbols in table
