@@ -118,5 +118,5 @@ C 192.168.0.0/24 is directly connected, FastEthernet0/1<br><br>
 
 Type escape sequence to abort.<br>
 Sending 5, 100-byte ICMP Echos to 10.0.0.3, timeout is 2 seconds:<br>
-.!!!!<br>
-Success rate is 80 percent (4/5), round-trip min/avg/max = 0/0/1 ms<br>
+!!!!!<br>
+Success rate is 100 percent (5/5), round-trip min/avg/max = 0/1/2 ms<br>
