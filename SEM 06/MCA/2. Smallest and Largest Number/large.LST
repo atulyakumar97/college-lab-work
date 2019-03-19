@@ -1,7 +1,7 @@
-A51 MACRO ASSEMBLER  LARGE                                                                02/01/2019 11:27:13 PAGE     1
+A51 MACRO ASSEMBLER  LARGE                                                                03/18/2019 22:01:49 PAGE     1
 
 
-MACRO ASSEMBLER A51 V8.02b
+MACRO ASSEMBLER A51 V8.2.7.0
 OBJECT MODULE PLACED IN large.OBJ
 ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE large.asm SET(SMALL) DEBUG EP
 
@@ -22,7 +22,7 @@ LOC  OBJ            LINE     SOURCE
 0015 F0               13     MOVX @DPTR,A
 0016 80FE             14     HERE: SJMP HERE
                       15     end
-A51 MACRO ASSEMBLER  LARGE                                                                02/01/2019 11:27:13 PAGE     2
+A51 MACRO ASSEMBLER  LARGE                                                                03/18/2019 22:01:49 PAGE     2
 
 SYMBOL TABLE LISTING
 ------ ----- -------

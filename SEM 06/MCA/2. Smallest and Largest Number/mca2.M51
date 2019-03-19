@@ -1,15 +1,15 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/02/2019  19:28:48  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/18/2019  22:01:49  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE small.obj TO mca2
+C:\KEIL_V5\C51\BIN\BL51.EXE large.obj TO mca2
 
 
 INPUT MODULES INCLUDED:
-  small.obj (SMALL)
+  large.obj (LARGE)
 
 
-LINK MAP OF MODULE:  mca2 (SMALL)
+LINK MAP OF MODULE:  mca2 (LARGE)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -23,12 +23,12 @@ LINK MAP OF MODULE:  mca2 (SMALL)
 
 
 
-SYMBOL TABLE OF MODULE:  mca2 (SMALL)
+SYMBOL TABLE OF MODULE:  mca2 (LARGE)
 
   VALUE           TYPE          NAME
   ----------------------------------
 
-  -------         MODULE        SMALL
+  -------         MODULE        LARGE
   C:000EH         SYMBOL        DOWN
   C:0016H         SYMBOL        HERE
   C:000BH         SYMBOL        NEXT
@@ -46,7 +46,7 @@ SYMBOL TABLE OF MODULE:  mca2 (SMALL)
   C:0014H         LINE#         12
   C:0015H         LINE#         13
   C:0016H         LINE#         14
-  -------         ENDMOD        SMALL
+  -------         ENDMOD        LARGE
 
 ******************************************************************************
 * RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0018H BYTE ( 1%) *

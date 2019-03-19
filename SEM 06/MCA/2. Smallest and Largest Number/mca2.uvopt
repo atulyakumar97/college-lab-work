@@ -207,8 +207,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\small.asm</PathWithFileName>
-      <FilenameWithoutPath>small.asm</FilenameWithoutPath>
+      <PathWithFileName>.\large.asm</PathWithFileName>
+      <FilenameWithoutPath>large.asm</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
