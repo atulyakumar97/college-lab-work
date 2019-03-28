@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  LARGE                                                                03/18/2019 22:01:49 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN large.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE large.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 902500            2     MOV DPTR,#2500H
+0003 7A0A              3     MOV R2,#0AH
+0005 7900              4     MOV R1,#00H
+0007 E0                5     UP: MOVX A,@DPTR
+0008 B50100            6     CJNE A, 01,NEXT
+000B 4001              7     NEXT: JC DOWN
+000D F9                8     MOV R1,A
+000E A3                9     DOWN: INC DPTR
+000F DAF6             10     DJNZ R2,UP
+0011 90250A           11     MOV DPTR,#250AH
+0014 E9               12     MOV A,R1
+0015 F0               13     MOVX @DPTR,A
+0016 80FE             14     HERE: SJMP HERE
+                      15     end
+A51 MACRO ASSEMBLER  LARGE                                                                03/18/2019 22:01:49 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DOWN . . . . . . .  C ADDR   000EH   A   
+HERE . . . . . . .  C ADDR   0016H   A   
+NEXT . . . . . . .  C ADDR   000BH   A   
+UP . . . . . . . .  C ADDR   0007H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

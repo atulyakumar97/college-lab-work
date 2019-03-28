@@ -1,0 +1,56 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/18/2019  22:01:49  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE large.obj TO mca2
+
+
+INPUT MODULES INCLUDED:
+  large.obj (LARGE)
+
+
+LINK MAP OF MODULE:  mca2 (LARGE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0018H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  mca2 (LARGE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LARGE
+  C:000EH         SYMBOL        DOWN
+  C:0016H         SYMBOL        HERE
+  C:000BH         SYMBOL        NEXT
+  C:0007H         SYMBOL        UP
+  C:0000H         LINE#         2
+  C:0003H         LINE#         3
+  C:0005H         LINE#         4
+  C:0007H         LINE#         5
+  C:0008H         LINE#         6
+  C:000BH         LINE#         7
+  C:000DH         LINE#         8
+  C:000EH         LINE#         9
+  C:000FH         LINE#         10
+  C:0011H         LINE#         11
+  C:0014H         LINE#         12
+  C:0015H         LINE#         13
+  C:0016H         LINE#         14
+  -------         ENDMOD        LARGE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0018H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=24
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

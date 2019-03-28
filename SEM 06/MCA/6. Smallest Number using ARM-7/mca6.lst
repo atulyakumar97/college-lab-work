@@ -1,0 +1,104 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             smallest,code,readonly
+    2 00000000         entry
+    3 00000000 E3A00000        mov              r0,#0x00
+    4 00000004 E3A0100A        mov              r1,#0x0a
+    5 00000008 E28F2024        adr              r2,array
+    6 0000000C E3A03000        mov              r3,#0
+    7 00000010 E7924003 
+                       loop    ldr              r4,[r2,r3]
+    8 00000014 E1500004        cmp              r0,r4
+    9 00000018 3A000003        bcc              carry
+   10 0000001C E2833004 
+                       carr2   add              r3,r3,#4
+   11 00000020 E2511001        subs             r1,r1,#1
+   12 00000024 1AFFFFF9        bne              loop
+   13 00000028 EAFFFFFE 
+                       stop    b                stop
+   14 0000002C E1A00004 
+                       carry   mov              r0,r4
+   15 00000030 EAFFFFF9        b                carr2
+   16 00000034                 align
+   17 00000034 00000002 
+              00000004 
+              00000009 
+              00000008 
+              00000004 
+              00000007 
+              00000003 
+              00000002 
+              00000001 
+              00000000 array   dcd              2,4,9,8,4,7,3,2,1,0
+   18 0000005C                 end
+Command Line: --debug --xref --apcs=interwork --depend=.\mca6.d -o.\mca6.o -IC:
+\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\Inc\Phili
+ps --predefine="__EVAL SETA 1" --list=.\mca6.lst mca6.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+array 00000034
+
+Symbol: array
+   Definitions
+      At line 17 in file mca6.asm
+   Uses
+      At line 5 in file mca6.asm
+Comment: array used once
+carr2 0000001C
+
+Symbol: carr2
+   Definitions
+      At line 10 in file mca6.asm
+   Uses
+      At line 15 in file mca6.asm
+Comment: carr2 used once
+carry 0000002C
+
+Symbol: carry
+   Definitions
+      At line 14 in file mca6.asm
+   Uses
+      At line 9 in file mca6.asm
+Comment: carry used once
+entry 00000000
+
+Symbol: entry
+   Definitions
+      At line 2 in file mca6.asm
+   Uses
+      None
+Comment: entry unused
+loop 00000010
+
+Symbol: loop
+   Definitions
+      At line 7 in file mca6.asm
+   Uses
+      At line 12 in file mca6.asm
+Comment: loop used once
+smallest 00000000
+
+Symbol: smallest
+   Definitions
+      At line 1 in file mca6.asm
+   Uses
+      None
+Comment: smallest unused
+stop 00000028
+
+Symbol: stop
+   Definitions
+      At line 13 in file mca6.asm
+   Uses
+      At line 13 in file mca6.asm
+Comment: stop used once
+7 symbols
+338 symbols in table
