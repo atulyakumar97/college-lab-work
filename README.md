@@ -30,3 +30,16 @@ AWP - Antenna and Radio Wave Propogation - Matlab and IE3D
 CCN - Computer Communication Networks - Cisco Packet Tracer and Matlab
 
 MCA - Microcontrollers and Applications - Keil and Proteus
+
+
+
+### SEM 07 Practical Subjects:
+
+MRE - Microwave Engineering - Matlab
+
+OCN - Optical Communication - Matlab
+
+NNFL - Neural Networks and Fuzzy Logic - Matlab
+
+MC - Mobile Communication System - Matlab
+
