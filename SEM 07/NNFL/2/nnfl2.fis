@@ -1,0 +1,44 @@
+[System]
+Name='expt2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Project-Funding'
+Range=[0 1]
+NumMFs=3
+MF1='Inadequate':'trapmf',[-0.357 -0.0374 0.1 0.396]
+MF2='Marginal':'trimf',[0.1 0.5 0.9]
+MF3='Adequate':'trapmf',[0.599 0.9 1.04 1.36]
+
+[Input2]
+Name='Project-Staffing'
+Range=[0 1]
+NumMFs=3
+MF1='Small':'trimf',[-0.469 0 0.4]
+MF2='Large':'trapmf',[0.6 1 1.04 1.36]
+MF3='medium':'trimf',[0.2 0.5 0.80026455026455]
+
+[Output1]
+Name='Risk'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='normal':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Rules]
+3 2, 1 (1) : 2
+3 -2, 2 (1) : 1
+2 1, 2 (1) : 1
+2 -1, 1 (1) : 1
+1 1, 3 (1) : 2
+1 -1, 1 (1) : 1
