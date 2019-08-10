@@ -1,0 +1,52 @@
+[System]
+Name='expt3_new'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=12
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='gpa'
+Range=[4 10]
+NumMFs=3
+MF1='low':'trapmf',[1.84 3.76 5.2 6.4]
+MF2='med':'trimf',[5.8 7 8.2]
+MF3='high':'trapmf',[7.6 8.8 10.12 12.04]
+
+[Input2]
+Name='GRE'
+Range=[270 340]
+NumMFs=3
+MF1='low':'trapmf',[244.8 267.2 285 300]
+MF2='med':'trimf',[290 305 320]
+MF3='high':'trapmf',[310 325 342.8 365.2]
+
+[Output1]
+Name='grade'
+Range=[0 1]
+NumMFs=5
+MF1='poor':'constant',[50]
+MF2='fair':'constant',[60]
+MF3='good':'constant',[70]
+MF4='vgood':'constant',[80]
+MF5='excellent':'constant',[90]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+1 3, 2 (1) : 1
+2 1, 2 (1) : 1
+2 2, 3 (1) : 1
+2 3, 4 (1) : 1
+3 1, 2 (1) : 1
+3 2, 4 (1) : 1
+3 3, 5 (1) : 1
+3 -3, 3 (1) : 1
+1 -1, 2 (1) : 1
+2 -1, 3 (1) : 1
