@@ -35,7 +35,7 @@ MCA - Microcontrollers and Applications - Keil and Proteus
 
 ### SEM 07 Practical Subjects:
 
-MRE - Microwave Engineering - Matlab
+MRE - Microwave Engineering - NA
 
 OCN - Optical Communication - Matlab
 
