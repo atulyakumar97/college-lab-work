@@ -12,7 +12,7 @@ gy=gx';
 Ix=conv2(img_norm,gx);
 Iy=conv2(img_norm,gy);
 
-fis1=readfis('expt4');
+fis1=readfis('nnfl4a');
 getfis(fis1);
 showrule(fis1);
 

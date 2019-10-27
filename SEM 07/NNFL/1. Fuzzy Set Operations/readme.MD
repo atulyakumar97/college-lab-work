@@ -8,8 +8,8 @@ Select a operation:
 1. Compliment 
 2. Union 
 3. Intersection 
-4.De Morgans Law
-4
+4. De Morgans Law
+
 De Morgans Law : Compliment of Union of A and B = Intersection of Compliment of A and Compliment of B
 Compliment of Union of A and B
          0    0.1000    0.8000    0.2000    0.8000
